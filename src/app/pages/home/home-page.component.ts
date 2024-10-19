@@ -1,10 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeHeroComponent } from "./components/home-hero/home-hero.component";
+import { HomeAboutComponent } from "./components/home-about/home-about.component";
+import { TopBarComponent } from "../../../components/top-bar/top-bar.component";
+import { NavBarComponent } from "../../../components/nav-bar/nav-bar.component";
+import { WhyUsComponent } from "./components/why-us/why-us.component";
+import { FooterComponent } from "../../../components/footer/footer.component";
 
 @Component({
   selector: 'app-home-page',
   standalone:true,
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  styleUrls: ['./home-page.component.css'],
+  imports: [HomeHeroComponent, HomeAboutComponent, TopBarComponent, NavBarComponent, WhyUsComponent, FooterComponent]
 })
 export class HomePageComponent implements OnInit {
 
