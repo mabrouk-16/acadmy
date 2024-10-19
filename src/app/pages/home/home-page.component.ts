@@ -5,13 +5,15 @@ import { TopBarComponent } from "../../../components/top-bar/top-bar.component";
 import { NavBarComponent } from "../../../components/nav-bar/nav-bar.component";
 import { WhyUsComponent } from "./components/why-us/why-us.component";
 import { FooterComponent } from "../../../components/footer/footer.component";
+import { HomeCoursesComponent } from "./components/home-courses/home-courses.component";
+import { HomeContactComponent } from "./components/home-contact/home-contact.component";
 
 @Component({
   selector: 'app-home-page',
   standalone:true,
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css'],
-  imports: [HomeHeroComponent, HomeAboutComponent, TopBarComponent, NavBarComponent, WhyUsComponent, FooterComponent]
+  imports: [HomeHeroComponent, HomeAboutComponent, TopBarComponent, NavBarComponent, WhyUsComponent, FooterComponent, HomeCoursesComponent, HomeContactComponent]
 })
 export class HomePageComponent implements OnInit {
 

@@ -19,6 +19,13 @@ export const routes: Routes = [
             (m) => m.CoursesComponent
           ),
       },
+      {
+        path: 'about',
+        loadComponent: () =>
+          import('./pages/about-page/about-page.component').then(
+            (m) => m.AboutPageComponent
+          ),
+      },
     ],
   },
 ];
