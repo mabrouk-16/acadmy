@@ -27,6 +27,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
+              "node_modules/swiper/swiper-bundle.min.css",
               "src/assets"
             ],
             "styles": [
