@@ -11,4 +11,7 @@ import { NavBarComponent } from '../components/nav-bar/nav-bar.component';
 })
 export class AppComponent {
   title = 'academy';
+  scrollToTop() {
+    window.scrollTo(0, 10);
+  }
 }

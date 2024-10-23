@@ -5,6 +5,13 @@
 // @import "bootstrap/scss/XXXX";
 
 // Your custom styles
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-@import "./assets/css/style.min.css";
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  scroll-behavior: smooth;
+}
+@import "./assets/css/style.css";

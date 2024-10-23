@@ -10,16 +10,23 @@ import { HomeContactComponent } from "./components/home-contact/home-contact.com
 
 @Component({
   selector: 'app-home-page',
-  standalone:true,
+  standalone: true,
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css'],
-  imports: [HomeHeroComponent, HomeAboutComponent, TopBarComponent, NavBarComponent, WhyUsComponent, FooterComponent, HomeCoursesComponent, HomeContactComponent]
+  imports: [
+    HomeHeroComponent,
+    HomeAboutComponent,
+    TopBarComponent,
+    NavBarComponent,
+    WhyUsComponent,
+    FooterComponent,
+    HomeCoursesComponent,
+    HomeContactComponent,
+  ],
 })
 export class HomePageComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
