@@ -33,6 +33,20 @@ export const routes: Routes = [
             (m) => m.AboutPageComponent
           ),
       },
+      {
+        path: 'signup',
+        loadComponent: () =>
+          import('./auth/register/register.component').then(
+            (m) => m.RegisterComponent
+          ),
+      },
+      {
+        path: 'login',
+        loadComponent: () =>
+          import('./auth/login/login.component').then(
+            (m) => m.LoginComponent
+          ),
+      },
     ],
   },
 ];

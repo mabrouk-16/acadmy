@@ -25,11 +25,22 @@
       id="navbarCollapse"
     >
       <div class="navbar-nav mx-auto py-0">
-        <a [routerLink]="['/home']" routerLinkActive="active" class="nav-item nav-link ">Home</a>
-        <a [routerLink]="['/about']" routerLinkActive="active" class="nav-item nav-link"
+        <a
+          [routerLink]="['/home']"
+          routerLinkActive="active"
+          class="nav-item nav-link"
+          >Home</a
+        >
+        <a
+          [routerLink]="['/about']"
+          routerLinkActive="active"
+          class="nav-item nav-link"
           >About</a
         >
-        <a [routerLink]="['/courses',]" routerLinkActive="active" class="nav-item nav-link"
+        <a
+          [routerLink]="['/courses']"
+          routerLinkActive="active"
+          class="nav-item nav-link"
           >Courses</a
         >
         <div class="nav-item dropdown">
@@ -41,29 +52,64 @@
             >Pages</a
           >
           <div class="dropdown-menu m-0">
-            <a [routerLink]="['/']" routerLinkActive="active" class="dropdown-item"
+            <a
+              [routerLink]="['/']"
+              routerLinkActive="active"
+              class="dropdown-item"
               >Course Detail</a
             >
-            <a [routerLink]="['/']" routerLinkActive="active" class="dropdown-item"
+            <a
+              [routerLink]="['/']"
+              routerLinkActive="active"
+              class="dropdown-item"
               >Our Features</a
             >
-            <a [routerLink]="['/']" routerLinkActive="active" class="dropdown-item"
+            <a
+              [routerLink]="['/']"
+              routerLinkActive="active"
+              class="dropdown-item"
               >Instructors</a
             >
-            <a [routerLink]="['/']" routerLinkActive="active" class="dropdown-item"
+            <a
+              [routerLink]="['/']"
+              routerLinkActive="active"
+              class="dropdown-item"
               >Testimonial</a
             >
           </div>
         </div>
-        <a [routerLink]="['/']" routerLinkActive="active" class="nav-item nav-link"
+        <a
+          [routerLink]="['/']"
+          routerLinkActive="active"
+          class="nav-item nav-link"
           >Contact</a
         >
       </div>
+      @if (userService.user()?._id) {
+      <div class="d-flex align-items-center">
+        <p class="py-2 m-0 px-4 me-3 d-none d-lg-block">
+          {{ userService.user()?.firstName }}
+        </p>
+        <button
+          (click)="logout()"
+          class="btn btn-danger py-2 px-4 d-none d-lg-block"
+        >
+          Logout
+        </button>
+      </div>
+      }@else{
       <a
-        [routerLink]="['/']"
-        class="btn btn-primary py-2 px-4 d-none d-lg-block"
+        [routerLink]="['/signup']"
+        class="btn btn-success py-2 px-4 me-3 d-none d-lg-block"
         >Join Us</a
       >
+      <a
+        [routerLink]="['/login']"
+        class="btn btn-primary py-2 px-4 d-none d-lg-block"
+        >Login</a
+      >
+
+      }
     </div>
   </nav>
 </div>
