@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeHeroComponent } from "./components/home-hero/home-hero.component";
 import { HomeAboutComponent } from "./components/home-about/home-about.component";
-import { TopBarComponent } from "../../../components/top-bar/top-bar.component";
-import { NavBarComponent } from "../../../components/nav-bar/nav-bar.component";
 import { WhyUsComponent } from "./components/why-us/why-us.component";
-import { FooterComponent } from "../../../components/footer/footer.component";
 import { HomeCoursesComponent } from "./components/home-courses/home-courses.component";
 import { HomeContactComponent } from "./components/home-contact/home-contact.component";
+import { OurIntructorComponent } from "./components/our-intructor/our-intructor.component";
 
 @Component({
   selector: 'app-home-page',
@@ -16,13 +14,11 @@ import { HomeContactComponent } from "./components/home-contact/home-contact.com
   imports: [
     HomeHeroComponent,
     HomeAboutComponent,
-    TopBarComponent,
-    NavBarComponent,
     WhyUsComponent,
-    FooterComponent,
     HomeCoursesComponent,
     HomeContactComponent,
-  ],
+    OurIntructorComponent
+],
 })
 export class HomePageComponent implements OnInit {
   constructor() {}

@@ -2,9 +2,12 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () => import('./app.component').then((m) => m.AppComponent),
+    loadComponent: () =>
+      import('./pages/home/home-page.component').then(
+        (m) => m.HomePageComponent
+      ),
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      // { path: '', redirectTo: 'home', pathMatch: 'full' },
       {
         path: 'home',
         loadComponent: () =>
@@ -43,9 +46,7 @@ export const routes: Routes = [
       {
         path: 'login',
         loadComponent: () =>
-          import('./auth/login/login.component').then(
-            (m) => m.LoginComponent
-          ),
+          import('./auth/login/login.component').then((m) => m.LoginComponent),
       },
     ],
   },
