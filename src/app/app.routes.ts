@@ -1,13 +1,11 @@
 import { Routes } from '@angular/router';
+import { PagesComponent } from './pages/pages/pages.component';
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      import('./pages/home/home-page.component').then(
-        (m) => m.HomePageComponent
-      ),
+    component: PagesComponent,
     children: [
-      // { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
       {
         path: 'home',
         loadComponent: () =>
@@ -36,18 +34,18 @@ export const routes: Routes = [
             (m) => m.AboutPageComponent
           ),
       },
-      {
-        path: 'signup',
-        loadComponent: () =>
-          import('./auth/register/register.component').then(
-            (m) => m.RegisterComponent
-          ),
-      },
-      {
-        path: 'login',
-        loadComponent: () =>
-          import('./auth/login/login.component').then((m) => m.LoginComponent),
-      },
     ],
+  },
+  {
+    path: 'signup',
+    loadComponent: () =>
+      import('./auth/register/register.component').then(
+        (m) => m.RegisterComponent
+      ),
+  },
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./auth/login/login.component').then((m) => m.LoginComponent),
   },
 ];

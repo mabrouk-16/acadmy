@@ -5,8 +5,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
-  imports: [FormsModule],
   standalone: true,
+  imports: [FormsModule],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
