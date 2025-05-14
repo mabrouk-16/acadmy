@@ -1,10 +1,10 @@
 <!-- Navbar Start -->
 <div class="container-fluid p-0">
   <nav
-    class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5"
+    class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5 justify-content-lg-center"
   >
     <a
-      [routerLink]="['/']"
+      [routerLink]="[urlsNames.root]"
       routerLinkActive="active"
       class="navbar-brand ml-lg-3"
     >
@@ -26,52 +26,52 @@
     >
       <div class="navbar-nav mx-auto py-0">
         <a
-          [routerLink]="['/', 'home']"
+          [routerLink]="[urlsNames.root, urlsNames.home]"
           routerLinkActive="active"
           class="nav-item nav-link"
           >Home</a
         >
         <a
-          [routerLink]="['/', 'about']"
+          [routerLink]="[urlsNames.root, urlsNames.about]"
           routerLinkActive="active"
           class="nav-item nav-link"
           >About</a
         >
         <a
-          [routerLink]="['/', 'courses']"
+          [routerLink]="[urlsNames.root, urlsNames.courses]"
           routerLinkActive="active"
           class="nav-item nav-link"
           >Courses</a
         >
         <div class="nav-item dropdown">
           <a
-            [routerLink]="['/']"
+            [routerLink]="[urlsNames.root]"
             routerLinkActive="active"
             class="nav-link dropdown-toggle"
             data-toggle="dropdown"
             >Pages</a
           >
           <div class="dropdown-menu m-0">
-            <a
-              [routerLink]="['/']"
+            <!-- <a
+              [routerLink]="[urlsNames.root, urlsNames.coursesDetails]"
               routerLinkActive="active"
               class="dropdown-item"
               >Course Detail</a
             >
             <a
-              [routerLink]="['/']"
+              [routerLink]="[urlsNames.root]"
               routerLinkActive="active"
               class="dropdown-item"
               >Our Features</a
-            >
+            > -->
             <a
-              [routerLink]="['/']"
+              [routerLink]="[urlsNames.root, urlsNames.instructors]"
               routerLinkActive="active"
               class="dropdown-item"
               >Instructors</a
             >
             <a
-              [routerLink]="['/']"
+              [routerLink]="[urlsNames.root]"
               routerLinkActive="active"
               class="dropdown-item"
               >Testimonial</a
@@ -79,37 +79,44 @@
           </div>
         </div>
         <a
-          [routerLink]="['/']"
+          [routerLink]="[urlsNames.root, urlsNames.contact]"
           routerLinkActive="active"
           class="nav-item nav-link"
           >Contact</a
         >
-
-        @if (userService.user()?._id) {
-        <div class="d-flex align-items-center">
-          <p class="py-2 m-0 px-4 me-3 d-none d-lg-block">
-            {{ userService.user()?.firstName }}
-          </p>
-          <button
-            (click)="logout()"
-            class="btn btn-danger py-2 px-4 d-none d-lg-block"
-          >
-            Logout
-          </button>
-        </div>
-        }@else{
-        <a [routerLink]="['/', 'signup']" class="nav-item nav-link">
+      </div>
+      @if (userService.user()?._id) {
+      <div class="d-flex align-items-center">
+        <p class="py-2 m-0 px-4 me-3 d-none d-lg-block">
+          {{ userService.user()?.firstName }}
+        </p>
+        <button
+          (click)="logout()"
+          class="btn btn-danger py-2 px-4 d-none d-lg-block"
+        >
+          Logout
+        </button>
+      </div>
+      }@else{
+      <div class="d-flex align-items-center">
+        <a
+          [routerLink]="[urlsNames.root, urlsNames.signup]"
+          class="nav-item nav-link"
+        >
           <button class="m-0 btn btn-success me-3" style="width: fit-content">
             Join Us
           </button>
         </a>
-        <a [routerLink]="['/', 'login']" class="nav-item nav-link">
+        <a
+          [routerLink]="[urlsNames.root, urlsNames.login]"
+          class="nav-item nav-link"
+        >
           <button class="m-0 btn btn-primary me-3" style="width: fit-content">
             Login
           </button>
         </a>
-        }
       </div>
+      }
     </div>
   </nav>
 </div>
